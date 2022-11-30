@@ -2,9 +2,10 @@ package main
 
 import (
 	"fmt"
-	"io/ioutil"
 	"net/http"
 	"net/url"
+	"encoding/json"
+	"strings"
 )
 
 // weather struct
@@ -18,6 +19,8 @@ type Main struct {
 	pressure float64 `json: "pressure"`
 	humidity float64 `json: "Main"`
 }
+
+
 
 func main() {
 
@@ -35,5 +38,6 @@ func main() {
 	defer resp.Body.Close()
 	body, err := ioutil.ReadAll(resp.Body)
 	fmt.Println(string(body))
+	
 
 }
