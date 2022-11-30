@@ -37,6 +37,14 @@ func main() {
 	defer resp.Body.Close()
 	body, err := ioutil.ReadAll(resp.Body)
 	fmt.Println(string(body))
+	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		temp := r.URL.Query().Get("temp")
+		fmt.Println("temp =>", temp)
+		pressure := r.URL.Query().Get("pressure")
+		fmt.Println("pressure =>", pressure)
+		humidity := r.URL.Query().Get("humidity")
+		fmt.Println("humidity =>", humidity)
+	})
 	
 	
 
