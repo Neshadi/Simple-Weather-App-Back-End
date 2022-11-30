@@ -21,8 +21,6 @@ type Main struct {
 	humidity float64 `json: "Main"`
 }
 
-
-
 func main() {
 
 	fmt.Println("Enter the country name")
