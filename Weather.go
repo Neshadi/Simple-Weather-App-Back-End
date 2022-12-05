@@ -25,9 +25,9 @@ func main() {
 	var city string
 	fmt.Scanln(&city)
 	APIkey := "75c150e42d3efb8adc8d819361985205"
-	curl  "https://api.openweathermap.org/data/2.5/weather?q= " + city + " + &appid=" + APIkey
+	URL := "https://api.openweathermap.org/data/2.5/weather?q= " + city + " + &appid=" + APIkey
 	//curl "https://localhost:3000?id=abcdefghi"
-	urlParse, err := url.Parse(curl)
+	urlParse, err := url.Parse(URL)
 	resp, err := http.Get(urlParse.String())
 
 	if err != nil {
